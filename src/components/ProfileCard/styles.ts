@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ProfileCardContainer = styled.section`
   width: 100%;
   max-width: 54rem;
+  z-index: 99;
 
   display: flex;
   flex-direction: row;
