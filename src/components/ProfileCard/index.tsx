@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUpRightFromSquare,
@@ -12,40 +13,38 @@ import {
   ProfileCardFooter,
   ProfileCardHeader,
 } from './styles'
+import { ProfileContext } from '../../contexts/ProfileContext'
 
 export function ProfileCard() {
+  const { profile } = useContext(ProfileContext)
+
   return (
     <ProfileCardContainer>
-      <img src="https://github.com/wladimirgrf.png" alt="" />
+      <img src={profile.avatarUrl} alt="" />
       <ProfileCardBox>
         <ProfileCardHeader>
-          <span>Wladimir F</span>
-          <a
-            href="https://github.com/wladimirgrf"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <span>{profile.name || profile.login}</span>
+          <a href={profile.url} target="_blank" rel="noreferrer">
             GITHUB
             <FontAwesomeIcon size="sm" icon={faArrowUpRightFromSquare} />
           </a>
         </ProfileCardHeader>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{profile.bio}</p>
         <ProfileCardFooter>
           <span>
             <FontAwesomeIcon icon={faGithub} />
-            cameronwll
+            {profile.login}
           </span>
-          <span>
-            <FontAwesomeIcon icon={faBuilding} />
-            Rocketseat
-          </span>
+
+          {profile.company && (
+            <span>
+              <FontAwesomeIcon icon={faBuilding} />
+              {profile.company}
+            </span>
+          )}
           <span>
             <FontAwesomeIcon icon={faUserGroup} />
-            32 seguidores
+            {profile.followers} followers
           </span>
         </ProfileCardFooter>
       </ProfileCardBox>
