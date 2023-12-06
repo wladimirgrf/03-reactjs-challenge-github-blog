@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
 
   background-image: linear-gradient(
-    ${(props) => props.theme['base-profile']} 80%,
-    ${(props) => props.theme.blue} 200%
+    ${({ theme }) => theme['base-profile']} 80%,
+    ${({ theme }) => theme.blue} 200%
   );
 `

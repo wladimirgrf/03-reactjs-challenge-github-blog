@@ -12,12 +12,12 @@ export const SearchContainer = styled.form`
     align-items: center;
 
     strong {
-      color: ${(props) => props.theme['base-subtitle']};
+      color: ${({ theme }) => theme['base-subtitle']};
       font-size: 1.125rem;
     }
 
     span {
-      color: ${(props) => props.theme['base-span']};
+      color: ${({ theme }) => theme['base-span']};
       font-size: 0.875rem;
     }
   }
@@ -26,12 +26,12 @@ export const SearchContainer = styled.form`
     margin-top: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 6px;
-    border: 1px solid ${(props) => props.theme['base-border']};
-    color: ${(props) => props.theme['base-text']};
-    background: ${(props) => props.theme['base-input']};
+    border: 1px solid ${({ theme }) => theme['base-border']};
+    color: ${({ theme }) => theme['base-text']};
+    background: ${({ theme }) => theme['base-input']};
 
     &::placeholder {
-      color: ${(props) => props.theme['base-label']};
+      color: ${({ theme }) => theme['base-label']};
     }
   }
 `

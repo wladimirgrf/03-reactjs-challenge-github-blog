@@ -1,17 +1,20 @@
 import { ProfileCard } from '../../components/ProfileCard'
 import { Post } from './components/Post'
 import { Search } from './components/Search'
-import { BlogContainer } from './styles'
+import { BlogContainer, PostList } from './styles'
 
 export function Blog() {
   return (
     <BlogContainer>
       <ProfileCard />
-
       <Search />
 
-      <Post />
-      <Post />
+      <PostList>
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </PostList>
     </BlogContainer>
   )
 }
