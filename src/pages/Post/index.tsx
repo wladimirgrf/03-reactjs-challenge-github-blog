@@ -1,3 +1,5 @@
+import { IssueCard } from './components/IssueCard'
+
 export function Post() {
-  return <div>Test</div>
+  return <IssueCard />
 }

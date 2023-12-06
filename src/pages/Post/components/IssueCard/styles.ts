@@ -1,47 +1,30 @@
 import styled from 'styled-components'
 
-export const ProfileCardContainer = styled.section`
+export const IssueCardContainer = styled.section`
   width: 100%;
   max-width: 54rem;
   z-index: 99;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   border-radius: 10px;
   padding: 2rem 2.5rem;
-  margin-top: -5rem;
+  margin-top: -4rem;
   margin-left: auto;
   margin-right: auto;
 
   background: ${({ theme }) => theme['base-profile']};
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-  img {
-    width: 9.25rem;
-    border-radius: 8px;
+  h1 {
+    margin-top: 1.25rem;
   }
 `
 
-export const ProfileCardBox = styled.div`
-  margin: 0 2rem 0;
-
-  p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: ${({ theme }) => theme['base-text']};
-  }
-`
-
-export const ProfileCardHeader = styled.header`
+export const IssueCardHeader = styled.header`
   display: flex;
   justify-content: space-between;
-
-  span {
-    color: ${({ theme }) => theme['base-title']};
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
 
   a {
     height: 1.188rem;
@@ -63,8 +46,8 @@ export const ProfileCardHeader = styled.header`
   }
 `
 
-export const ProfileCardFooter = styled.footer`
-  margin-top: 1.5rem;
+export const IssueCardFooter = styled.footer`
+  margin-top: 0.5rem;
   gap: 1.5rem;
   display: flex;
 

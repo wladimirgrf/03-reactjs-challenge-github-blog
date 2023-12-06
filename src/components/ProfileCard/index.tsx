@@ -7,18 +7,18 @@ import {
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import {
+  ProfileCardBox,
   ProfileCardContainer,
-  ProfileBox,
-  ProfileFooter,
-  ProfileHeader,
+  ProfileCardFooter,
+  ProfileCardHeader,
 } from './styles'
 
 export function ProfileCard() {
   return (
     <ProfileCardContainer>
       <img src="https://github.com/wladimirgrf.png" alt="" />
-      <ProfileBox>
-        <ProfileHeader>
+      <ProfileCardBox>
+        <ProfileCardHeader>
           <span>Wladimir F</span>
           <a
             href="https://github.com/wladimirgrf"
@@ -28,13 +28,13 @@ export function ProfileCard() {
             GITHUB
             <FontAwesomeIcon size="sm" icon={faArrowUpRightFromSquare} />
           </a>
-        </ProfileHeader>
+        </ProfileCardHeader>
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
           viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
           pulvinar vel mass.
         </p>
-        <ProfileFooter>
+        <ProfileCardFooter>
           <span>
             <FontAwesomeIcon icon={faGithub} />
             cameronwll
@@ -47,8 +47,8 @@ export function ProfileCard() {
             <FontAwesomeIcon icon={faUserGroup} />
             32 seguidores
           </span>
-        </ProfileFooter>
-      </ProfileBox>
+        </ProfileCardFooter>
+      </ProfileCardBox>
     </ProfileCardContainer>
   )
 }
