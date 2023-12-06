@@ -1,5 +1,5 @@
 import { ProfileCard } from '../../components/ProfileCard'
-import { Post } from './components/Post'
+import { PostCard } from './components/PostCard'
 import { Search } from './components/Search'
 import { BlogContainer, PostList } from './styles'
 
@@ -10,10 +10,10 @@ export function Blog() {
       <Search />
 
       <PostList>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
       </PostList>
     </BlogContainer>
   )

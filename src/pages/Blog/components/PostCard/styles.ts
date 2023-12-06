@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const PostContainer = styled.article`
+export const PostCardContainer = styled.article`
   width: 26rem;
   height: 16.25rem;
   padding: 2rem;
@@ -22,7 +22,7 @@ export const PostContainer = styled.article`
   }
 `
 
-export const PostTitle = styled.div`
+export const PostCardTitle = styled.div`
   display: flex;
   align-items: baseline;
 
