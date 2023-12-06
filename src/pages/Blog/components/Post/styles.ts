@@ -6,19 +6,25 @@ export const PostContainer = styled.article`
   padding: 2rem;
   border-radius: 10px;
   line-height: 1.6;
+  cursor: pointer;
 
   background: ${({ theme }) => theme['base-post']};
+  border: 2px solid transparent;
 
   p {
     margin-top: 1.25rem;
     font-size: 1rem;
     color: ${({ theme }) => theme['base-text']};
   }
+
+  &:hover {
+    border-color: ${({ theme }) => theme['base-label']};
+  }
 `
 
 export const PostTitle = styled.div`
   display: flex;
-  justify-content: flex-start;
+  align-items: baseline;
 
   h3 {
     flex: 1;
