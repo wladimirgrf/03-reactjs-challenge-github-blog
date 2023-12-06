@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const IssueCardContainer = styled.section`
   width: 100%;
-  max-width: 54rem;
   z-index: 99;
 
   display: flex;
@@ -11,8 +10,6 @@ export const IssueCardContainer = styled.section`
   border-radius: 10px;
   padding: 2rem 2.5rem;
   margin-top: -4rem;
-  margin-left: auto;
-  margin-right: auto;
 
   background: ${({ theme }) => theme['base-profile']};
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
