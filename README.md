@@ -1,6 +1,6 @@
 ![](.github/assets/logo.svg)
 
-### Challenge 02 - Coffee Delivery
+### Challenge 03 - Github Blog
 
 ![](.github/assets/page1.png)
 ![](.github/assets/page2.png)
