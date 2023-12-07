@@ -11,4 +11,10 @@ export const HeaderContainer = styled.header`
     ${({ theme }) => theme['base-profile']} 80%,
     ${({ theme }) => theme.blue} 200%
   );
+
+  @media (max-width: 1020px) {
+    img {
+      width: 33%;
+    }
+  }
 `

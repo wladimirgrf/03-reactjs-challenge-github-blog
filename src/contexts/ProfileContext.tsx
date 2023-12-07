@@ -41,8 +41,8 @@ interface ProfileProviderProps {
 export const ProfileContext = createContext({} as ProfileContextType)
 
 export function ProfileProvider({ children }: ProfileProviderProps) {
-  const [login] = useState('filipedeschamps')
-  const [repo] = useState('filipedeschamps/tabnews.com.br')
+  const [login] = useState(import.meta.env.VITE_GITHUB_PROFILE)
+  const [repo] = useState(import.meta.env.VITE_GITHUB_REPOSITORY)
   const [profile, setProfile] = useState<Profile>({} as Profile)
   const [issues, setIssues] = useState<Issue[]>([])
 

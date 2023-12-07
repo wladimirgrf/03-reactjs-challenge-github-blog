@@ -34,4 +34,8 @@ export const SearchContainer = styled.form`
       color: ${({ theme }) => theme['base-label']};
     }
   }
+
+  @media (max-width: 1020px) {
+    margin: 3%;
+  }
 `

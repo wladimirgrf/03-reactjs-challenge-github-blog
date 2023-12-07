@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const ProfileCardContainer = styled.section`
-  width: 100%;
-  max-width: 54rem;
+  width: 54rem;
   z-index: 99;
 
   display: flex;
@@ -21,10 +20,18 @@ export const ProfileCardContainer = styled.section`
     width: 9.25rem;
     border-radius: 8px;
   }
+
+  @media (max-width: 1020px) {
+    width: 94%;
+    margin-top: -5%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 `
 
 export const ProfileCardBox = styled.div`
   margin: 0 2rem 0;
+  width: 100%;
 
   p {
     margin-top: 0.5rem;
@@ -61,6 +68,10 @@ export const ProfileCardHeader = styled.header`
     &:hover {
       border-bottom: 1px solid ${({ theme }) => theme.blue};
     }
+
+    @media (max-width: 1020px) {
+      margin-left: 1rem;
+    }
   }
 `
 
@@ -79,5 +90,9 @@ export const ProfileCardFooter = styled.footer`
     svg {
       color: ${({ theme }) => theme['base-label']};
     }
+  }
+
+  @media (max-width: 1020px) {
+    flex-direction: column;
   }
 `
