@@ -8,6 +8,7 @@ import { ProfileContext } from '../../contexts/ProfileContext'
 
 export function Blog() {
   const { issues } = useContext(ProfileContext)
+  const validIssues = issues.filter((issue) => issue.body)
 
   return (
     <BlogContainer>
@@ -15,10 +16,14 @@ export function Blog() {
       <Search />
 
       <PostList>
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        {validIssues.map((issue) => (
+          <PostCard
+            key={issue.id}
+            title={issue.title}
+            body={issue.body}
+            createdAt={issue.createdAt}
+          />
+        ))}
       </PostList>
     </BlogContainer>
   )

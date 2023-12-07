@@ -1,17 +1,31 @@
+import { formatDistanceToNow } from 'date-fns'
+
 import { PostCardContainer, PostCardTitle } from './styles'
 
-export function PostCard() {
+interface PostCardProps {
+  title: string
+  body: string
+  createdAt: Date
+}
+
+export function PostCard({ title, body, createdAt }: PostCardProps) {
+  const formattedTitle =
+    title.length > 32 ? title.substring(0, 32).trimEnd().concat('...') : title
+
+  const formattedBody =
+    body.length > 170 ? body.substring(0, 170).trimEnd().concat('...') : body
+
   return (
     <PostCardContainer>
       <PostCardTitle>
-        <h3>JavaScript data types and data structures</h3>
-        <span>At 1 day</span>
+        <h3>{formattedTitle}</h3>
+        <span>
+          {formatDistanceToNow(createdAt, {
+            addSuffix: true,
+          })}
+        </span>
       </PostCardTitle>
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in ...
-      </p>
+      <p>{formattedBody}</p>
     </PostCardContainer>
   )
 }

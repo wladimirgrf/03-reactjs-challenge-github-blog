@@ -19,6 +19,7 @@ interface Profile {
 }
 
 interface Issue {
+  id: number
   title: string
   author: string
   body: string
@@ -36,12 +37,11 @@ interface ProfileProviderProps {
   children: ReactNode
 }
 
-const login = 'filipedeschamps'
-const repo = 'filipedeschamps/tabnews.com.br'
-
 export const ProfileContext = createContext({} as ProfileContextType)
 
 export function ProfileProvider({ children }: ProfileProviderProps) {
+  const [login] = useState('filipedeschamps')
+  const [repo] = useState('filipedeschamps/tabnews.com.br')
   const [profile, setProfile] = useState<Profile>({} as Profile)
   const [issues, setIssues] = useState<Issue[]>([])
 
@@ -59,27 +59,35 @@ export function ProfileProvider({ children }: ProfileProviderProps) {
       url: data.html_url,
       followers: data.followers,
     })
-  }, [])
+  }, [login])
+
+  const fetchIssues = useCallback(
+    async (query?: string) => {
+      const response = await api.get('/search/issues', {
+        params: { q: `${query || ''}repo:${repo}` },
+      })
+
+      const issuesFound: Issue[] = response.data.items.map((item: any) => ({
+        id: item.id,
+        title: item.title,
+        author: item.user.login,
+        body: item.body,
+        comments: item.comments,
+        createdAt: new Date(item.created_at),
+      }))
+
+      setIssues(issuesFound)
+    },
+    [repo],
+  )
 
   useEffect(() => {
     getProfile()
   }, [getProfile])
 
-  const fetchIssues = useCallback(async (query?: string) => {
-    const response = await api.get('/search/issues', {
-      params: { q: `${query}repo:${repo}` },
-    })
-
-    const issuesFound: Issue[] = response.data.items.map((item: any) => ({
-      title: item.title,
-      author: item.user.login,
-      body: item.body,
-      comments: item.comments,
-      createdAt: new Date(item.created_at),
-    }))
-
-    setIssues(issuesFound)
-  }, [])
+  useEffect(() => {
+    fetchIssues()
+  }, [fetchIssues])
 
   return (
     <ProfileContext.Provider

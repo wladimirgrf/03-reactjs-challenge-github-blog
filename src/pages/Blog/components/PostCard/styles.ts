@@ -14,6 +14,8 @@ export const PostCardContainer = styled.article`
   p {
     margin-top: 1.25rem;
     font-size: 1rem;
+    word-break: break-all;
+    word-wrap: break-word;
     color: ${({ theme }) => theme['base-text']};
   }
 
@@ -29,11 +31,14 @@ export const PostCardTitle = styled.div`
   h3 {
     flex: 1;
     font-size: 1.25rem;
+    word-break: break-all;
+    word-wrap: break-word;
     color: ${({ theme }) => theme['base-title']};
   }
 
   span {
     font-size: 0.875rem;
+    margin-left: 1rem;
     color: ${({ theme }) => theme['base-span']};
   }
 `
