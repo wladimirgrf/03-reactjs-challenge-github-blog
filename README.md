@@ -14,17 +14,11 @@ Follow the steps below:
 ```bash
 # Project dependencies
 $ npm i
-```
 
-Environment configuration
-```bash
 # Make a copy of '.env.sample'
 # Fill up with YOUR environment variables
 $ cp .env.sample .env
-```
 
-Launch the Application
-```bash
 # Start the app
 $ npm run dev
 ```
