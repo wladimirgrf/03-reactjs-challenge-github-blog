@@ -63,10 +63,8 @@ export function ProfileProvider({ children }: ProfileProviderProps) {
   }, [login])
 
   const fetchIssues = useCallback(
-    async (query?: string) => {
-      const response = await api.get('/search/issues', {
-        params: { q: `${query || ''}repo:${repo}` },
-      })
+    async (query: string = '') => {
+      const response = await api.get(`/search/issues?q=${query}%20repo:${repo}`)
 
       const issuesFound: Issue[] = response.data.items.map((item: any) => ({
         id: item.id,
