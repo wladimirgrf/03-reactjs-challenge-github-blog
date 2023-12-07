@@ -9,5 +9,9 @@ export const PostContainer = styled.main`
 export const PostBody = styled.article`
   padding: 2.5rem 2rem;
 
-  color: ${({ theme }) => theme['base-text']};
+  div {
+    line-height: 1.6;
+    overflow: scroll;
+    color: ${({ theme }) => theme['base-text']};
+  }
 `

@@ -18,12 +18,13 @@ interface Profile {
   followers: number
 }
 
-interface Issue {
+export interface Issue {
   id: number
   title: string
   author: string
   body: string
-  comments: number
+  url: string
+  numberOfComments: number
   createdAt: Date
 }
 
@@ -72,7 +73,8 @@ export function ProfileProvider({ children }: ProfileProviderProps) {
         title: item.title,
         author: item.user.login,
         body: item.body,
-        comments: item.comments,
+        url: item.html_url,
+        numberOfComments: item.comments,
         createdAt: new Date(item.created_at),
       }))
 

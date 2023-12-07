@@ -16,6 +16,8 @@ export const IssueCardContainer = styled.section`
 
   h1 {
     margin-top: 1.25rem;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 `
 

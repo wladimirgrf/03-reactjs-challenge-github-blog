@@ -7,10 +7,19 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { formatDistanceToNow } from 'date-fns'
 
 import { IssueCardContainer, IssueCardFooter, IssueCardHeader } from './styles'
 
-export function IssueCard() {
+interface IssueCardProps {
+  title: string
+  url: string
+  author: string
+  numberOfComments: number
+  createdAt: Date
+}
+
+export function IssueCard(props: IssueCardProps) {
   return (
     <IssueCardContainer>
       <IssueCardHeader>
@@ -18,27 +27,23 @@ export function IssueCard() {
           <FontAwesomeIcon size="sm" icon={faChevronLeft} />
           BACK
         </NavLink>
-        <a
-          href="https://github.com/wladimirgrf"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={props.url} target="_blank" rel="noreferrer">
           ON GITHUB
           <FontAwesomeIcon size="sm" icon={faArrowUpRightFromSquare} />
         </a>
       </IssueCardHeader>
-      <h1>JavaScript data types and data structures</h1>
+      <h1>{props.title}</h1>
       <IssueCardFooter>
         <span>
           <FontAwesomeIcon icon={faGithub} />
-          cameronwll
+          {props.author}
         </span>
         <span>
           <FontAwesomeIcon icon={faCalendarDay} />
-          At 1 day
+          {formatDistanceToNow(props.createdAt, { addSuffix: true })}
         </span>
         <span>
-          <FontAwesomeIcon icon={faComment} /> 5 comments
+          <FontAwesomeIcon icon={faComment} /> {props.numberOfComments} comments
         </span>
       </IssueCardFooter>
     </IssueCardContainer>

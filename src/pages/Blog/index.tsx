@@ -19,8 +19,12 @@ export function Blog() {
         {validIssues.map((issue) => (
           <PostCard
             key={issue.id}
+            id={issue.id}
+            url={issue.url}
             title={issue.title}
             body={issue.body}
+            numberOfComments={issue.numberOfComments}
+            author={issue.author}
             createdAt={issue.createdAt}
           />
         ))}
