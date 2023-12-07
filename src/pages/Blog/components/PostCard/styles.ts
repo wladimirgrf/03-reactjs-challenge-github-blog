@@ -22,6 +22,10 @@ export const PostCardContainer = styled.article`
   &:hover {
     border-color: ${({ theme }) => theme['base-label']};
   }
+
+  @media (max-width: 1020px) {
+    width: 100%;
+  }
 `
 
 export const PostCardTitle = styled.div`

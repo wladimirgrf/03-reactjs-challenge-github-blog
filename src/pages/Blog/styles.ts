@@ -9,4 +9,10 @@ export const PostList = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+
+  @media (max-width: 1020px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 `

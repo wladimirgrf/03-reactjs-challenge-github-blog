@@ -19,6 +19,13 @@ export const IssueCardContainer = styled.section`
     word-break: break-all;
     word-wrap: break-word;
   }
+
+  @media (max-width: 1020px) {
+    width: 94%;
+    margin-top: -4%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 `
 
 export const IssueCardHeader = styled.header`
@@ -60,5 +67,9 @@ export const IssueCardFooter = styled.footer`
     svg {
       color: ${({ theme }) => theme['base-label']};
     }
+  }
+
+  @media (max-width: 1020px) {
+    flex-direction: column;
   }
 `
