@@ -8,7 +8,7 @@
 
 #### 💻 Getting started
 
-To-do list-based application created with Vite + React.
+Blog application created with Vite + React.
 
 Follow the steps below:
 ```bash
